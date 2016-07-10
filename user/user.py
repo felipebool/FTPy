@@ -6,6 +6,7 @@ import getpass
 from user_dtp import UserDTP
 from user_pi import UserPI
 
+
 class User:
 	'''
 		File Transfer Protocol User Interface
@@ -20,28 +21,25 @@ if __name__ == '__main__':
 	credentials, port = sys.argv[1].split(':')
 	username, hostname = credentials.split('@')
 
-	# print(username)
-	# print(hostname)
-	# print(port)
-
-	# exit()
 	print('FTPy - A Python implementation of FTP according to RFC959')
 	password = getpass.getpass(prompt='Password: ')
 
 	protocol_interpreter = UserPI(username, password, hostname, port)
 
-	# protocol_interpreter.send("hello")
-	# response = protocol_interpreter.receive()
-
-	# validate user credentials
-
 	while True:
-		command = input(User.prompt_msg)
+		user_input = input(User.prompt_msg)
+
+		try:
+			command, argument  = user_input.split()
+			comm = 
+		except:
+
+
 
 		if command == 'quit':
 			break
 
-		response = protocol_interpreter.send(command)
-		print(response)
+		protocol_interpreter.send(command)
+		response = protocol_interpreter.receive()
 
-	# close connection
+		print(response)
