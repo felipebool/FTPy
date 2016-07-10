@@ -21,4 +21,4 @@ if __name__ == '__main__':
 		if command == 'quit':
 			break
 
-	# end connection
+	# close connection
