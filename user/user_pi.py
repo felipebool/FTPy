@@ -1,63 +1,64 @@
 #!/usr/bin/python3
 
-class UserPI():
+class UserPI:
 	'''
 		User Protocol Interpreter (port 20)
 	'''
 
-	def __init__(self, username, password, ctrl_port):
+	def __init__(self, username, password, control_port, data_port=8020):
 		self.username = username
 		self.password = password
-		self.ctrl_port = ctrl_port
+		self.control_port = control_port
+		self.data_port = data_port
 
 	# FTP Access control commands ----------------------------------------------
 	def user_comand(self):
 		'''
 			User Name
 		'''
-		pass
+		return 'user_comand'
 
 	def pass_command(self):
 		'''
 			Password
 		'''
-		pass
+		return 'pass_command'
 
 	def acct_command(self):
 		'''
 			Account
 		'''
-		pass
+		return 'acct_command'
 
 	def cwd_command(self):
 		'''
 			Change Working Directory
 		'''
-		pass
+		return 'cwd_command'
 
 	def cdup_command(self):
 		'''
 			Change To Parent Directory
 		'''
-		pass
+		return 'cdup_command'
 
 	def smnt_command(self):
 		'''
 			Structure Mount
 		'''
-		pass
+		return 'smnt_command'
 
 	def rein_command(self):
 		'''
 			Reinitialize
 		'''
-		pass
+		return 'rein_command'
 
 	def quit_command(self):
 		'''
 			Logout
 		'''
-		pass
+		return 'quit_command'
 
 
 	# FTP Transfer parameter commands ------------------------------------------
@@ -65,31 +66,31 @@ class UserPI():
 		'''
 			Data Port
 		'''
-		pass
+		return 'port_command'
 
 	def pasv_command(self):
 		'''
 			Passive
 		'''
-		pass
+		return 'pasv_command'
 
 	def type_command(self, repr_type):
 		'''
 			Representation Type
 		'''
-		pass
+		return 'type_command'
 
 	def stru_command(self, file_structure):
 		'''
 			File Structure
 		'''
-		pass
+		return 'stru_command'
 
 	def mode_command(self, data_transfer_mode):
 		'''
 			Transfer Mode
 		'''
-		pass
+		return 'mode_command'
 
 
 	# FPT Service commands -----------------------------------------------------
@@ -97,115 +98,124 @@ class UserPI():
 		'''
 			Retrieve
 		'''
-		pass
+		return 'retr_command'
 
 	def stor_command(self, pathname):
 		'''
 			Store
 		'''
-		pass
+		return 'stor_command'
 
 	def stou_command(self, pathname):
 		'''
 			Store Unique
 		'''
-		pass
+		return 'stou_command'
 
 	def appe_command(self, pathname):
 		'''
 			Append (with create)
 		'''
-		pass
+		return 'appe_command'
 
 	def allo_command(self, allocate_size):
 		'''
 			Allocate
 		'''
-		pass
+		return 'allo_command'
 
 	def rest_command(self):
 		'''
 			Restart
 		'''
-		pass
+		return 'rest_command'
 
 	def rnfr_command(self, old_pathname):
 		'''
 			Rename From
 		'''
-		pass
+		return 'rnfr_command'
 
 	def rnto_command(self, new_pathname):
 		'''
 			Rename To
 		'''
-		pass
+		return 'rnto_command'
 
 	def abor_command(self):
 		'''
 			Abort
 		'''
-		pass
+		return 'abor_command'
 
 	def dele_command(self, pathname):
 		'''
 			Delete
 		'''
-		pass
+		return 'dele_command'
 
 	def rmd_command(self, pathname):
 		'''
 			Remove Directory
 		'''
-		pass
+		return 'rmd_command'
 
 	def mkd_command(self, pathname):
 		'''
 			Make Directory
 		'''
-		pass
+		return 'mkd_command'
 
 	def pwd_command(self):
 		'''
 			Print Working Directory
 		'''
-		pass
+		return 'pwd_command'
 
 	def list_command(self, pathname=None):
 		'''
 			List
 		'''
-		pass
+		return 'list_command'
 
 	def nlst_command(self, pathname):
 		'''
 			Name List
 		'''
-		pass
+		return 'nlst_command'
 
 	def site_command(self):
 		'''
 			Site Parameters
 		'''
-		pass
+		return 'site_command'
 
 	def syst_command(self):
 		'''
 			System
 		'''
-		pass
+		return 'syst_command'
 
 	def help_command(self, command=None):
 		'''
 			Help
 		'''
-		pass
+		return 'help_command'
 
 	def noop_command(self):
 		'''
 			Noop (No-operation)
 		'''
-		pass
+		return 'noop_command'
+
+	# A command is only unkown to the server,
+	# it has to give a response saying the command
+	# is not known.
+	def ukn_command(self):
+		'''
+			Unknow Command
+		'''
+		return 'ukn_command'
 
 	
 

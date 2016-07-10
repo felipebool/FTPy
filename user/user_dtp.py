@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-class UserDTP():
+class UserDTP:
 	'''
 		User Data Transfer Process (port 21)
 	'''

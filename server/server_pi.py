@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-class ServerPI():
+class ServerPI:
 	'''
 		Server Protocol Interpreter (port 20)
 	'''

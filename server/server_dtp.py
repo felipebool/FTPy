@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-class ServerDTP():
+class ServerDTP:
 	'''
 		Server Data Transfer Process (port 21)
 	'''
