@@ -5,11 +5,12 @@ class UserPI():
 		User Protocol Interpreter (port 20)
 	'''
 
-	# FTP Access control commands
-	def __init__(self, username, password):
+	def __init__(self, username, password, ctrl_port):
 		self.username = username
 		self.password = password
+		self.ctrl_port = ctrl_port
 
+	# FTP Access control commands ----------------------------------------------
 	def user_comand(self):
 		'''
 			User Name
@@ -58,7 +59,8 @@ class UserPI():
 		'''
 		pass
 
-	# FTP Transfer parameter commands
+
+	# FTP Transfer parameter commands ------------------------------------------
 	def port_command(self, data_port):
 		'''
 			Data Port
@@ -89,7 +91,128 @@ class UserPI():
 		'''
 		pass
 
-	# FPT Service commands
-	
+
+	# FPT Service commands -----------------------------------------------------
+	def retr_command(self, pathname):
+		'''
+			Retrieve
+		'''
+		pass
+
+	def stor_command(self, pathname):
+		'''
+			Store
+		'''
+		pass
+
+	def stou_command(self, pathname):
+		'''
+			Store Unique
+		'''
+		pass
+
+	def appe_command(self, pathname):
+		'''
+			Append (with create)
+		'''
+		pass
+
+	def allo_command(self, allocate_size):
+		'''
+			Allocate
+		'''
+		pass
+
+	def rest_command(self):
+		'''
+			Restart
+		'''
+		pass
+
+	def rnfr_command(self, old_pathname):
+		'''
+			Rename From
+		'''
+		pass
+
+	def rnto_command(self, new_pathname):
+		'''
+			Rename To
+		'''
+		pass
+
+	def abor_command(self):
+		'''
+			Abort
+		'''
+		pass
+
+	def dele_command(self, pathname):
+		'''
+			Delete
+		'''
+		pass
+
+	def rmd_command(self, pathname):
+		'''
+			Remove Directory
+		'''
+		pass
+
+	def mkd_command(self, pathname):
+		'''
+			Make Directory
+		'''
+		pass
+
+	def pwd_command(self):
+		'''
+			Print Working Directory
+		'''
+		pass
+
+	def list_command(self, pathname=None):
+		'''
+			List
+		'''
+		pass
+
+	def nlst_command(self, pathname):
+		'''
+			Name List
+		'''
+		pass
+
+	def site_command(self):
+		'''
+			Site Parameters
+		'''
+		pass
+
+	def syst_command(self):
+		'''
+			System
+		'''
+		pass
+
+	def help_command(self, command=None):
+		'''
+			Help
+		'''
+		pass
+
+	def noop_command(self):
+		'''
+			Noop (No-operation)
+		'''
+		pass
 
 	
+
+
+
+
+
+
+
+
