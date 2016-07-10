@@ -5,7 +5,7 @@ class FTPReplies():
 #	{120: 'Service ready in a few minutes.'}
 #	{125: 'Data connection already open; transfer starting.'}
 #	{150: 'File status okay; about to open data connection.'}
-	CMDOK ={200: 'Command okay.'}
+	CMDOK = {200: 'Command okay.'}
 #	{202: 'Command not implemented, superfluous at this site.'}
 #	{211: 'System status, or system help reply.'}
 #	{212: 'Directory status.'}
