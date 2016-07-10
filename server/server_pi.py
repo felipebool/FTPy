@@ -1,7 +1,15 @@
 #!/usr/bin/python3
 
-class ServerPI:
+import serversocket
+
+class ServerPI(socketserver.BaseRequestHandler):
 	'''
 		Server Protocol Interpreter (port 20)
 	'''
-	pass
+	def __init__(self, control_port=65021):
+		self.control_port = control_port
+		self.socket = self.listen()
+
+	def handle(self):
+		self.data = self.request(1024)
+		print(self.data)

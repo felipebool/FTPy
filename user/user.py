@@ -5,9 +5,6 @@ import getpass
 from user_dtp import UserDTP
 from user_pi import UserPI
 
-# It was used 'User' rather than 'Client' because, strangely, the word
-# Client is never mentioned in the entire RFC959.
-
 class User:
 	'''
 		File Transfer Protocol User Interface
@@ -18,27 +15,42 @@ class User:
 		pass
 
 if __name__ == '__main__':
-	# usage: ftpy <username>@<hostname>
+	# username@hostname:portnumber
+	credentials, port = sys.argv[1].split(':')
+	username, hostname = credentials.split('@')
 
-	username, hostname = sys.argv[1].split('@')
+	# print(username)
+	# print(hostname)
+	# print(port)
 
+	# exit()
 	print('FTPy - A Python implementation of FTP according to RFC959')
 	password = getpass.getpass(prompt='Password: ')
 
-	# validate user credentials
-	user_pi = UserPI(username, password, 8021, 8020)
+	protocol_interpreter = UserPI(username, password, hostname, port)
 
-	while True:
-		command = input(User.prompt_msg)
-		command = command + '_command'
+	protocol_interpreter.send("hello")
+	response = protocol_interpreter.receive()
 
-		try:
-			result = getattr(user_pi, command)()
-		except AttributeError:
-			result = user_pi.ukn_command()
+	print(response)
 
-		print(result)
-		if command == 'quit_command':
-			break
 
-	# close connection
+
+
+#	# validate user credentials
+#	user_pi = UserPI(username, password, 8021)
+
+#	while True:
+#		command = input(User.prompt_msg)
+#		command = command + '_command'
+#
+#		try:
+#			result = getattr(user_pi, command)()
+#		except AttributeError:
+#			result = user_pi.ukn_command()
+#
+#		print(result)
+#		if command == 'quit_command':
+#			break
+#
+#	# close connection
