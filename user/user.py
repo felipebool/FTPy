@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!/usr/bin/python
+
 import sys
 import getpass
 
@@ -29,28 +30,18 @@ if __name__ == '__main__':
 
 	protocol_interpreter = UserPI(username, password, hostname, port)
 
-	protocol_interpreter.send("hello")
-	response = protocol_interpreter.receive()
+	# protocol_interpreter.send("hello")
+	# response = protocol_interpreter.receive()
 
-	print(response)
+	# validate user credentials
 
+	while True:
+		command = input(User.prompt_msg)
 
+		if command == 'quit':
+			break
 
+		response = protocol_interpreter.send(command)
+		print(response)
 
-#	# validate user credentials
-#	user_pi = UserPI(username, password, 8021)
-
-#	while True:
-#		command = input(User.prompt_msg)
-#		command = command + '_command'
-#
-#		try:
-#			result = getattr(user_pi, command)()
-#		except AttributeError:
-#			result = user_pi.ukn_command()
-#
-#		print(result)
-#		if command == 'quit_command':
-#			break
-#
-#	# close connection
+	# close connection
